@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'cars'], function () {
-    Route::get('/makes', 'CarMakeController@index')->name('makes');
-    Route::get('/models', 'CarModelController@index')->name('models');
-    Route::get('/list', 'CarController@index')->name('cars');
+    Route::get('makes', 'CarMakeController@index')->name('makes');
+    Route::get('models', 'CarModelController@index')->name('models');
+    Route::get('list', 'CarController@index')->name('cars');
 });

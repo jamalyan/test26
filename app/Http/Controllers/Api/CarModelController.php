@@ -22,7 +22,9 @@ class CarModelController extends Controller
                 return $query->whereHas('carMake', function (Builder $q) use ($make) {
                     $q->where('name', $make);
                 });
-            })->get();
+            })
+            ->orderBy('name', 'asc')
+            ->get();
 
         return response()->json(['message' => 'success', 'data' => $data], 200);
     }

@@ -15,7 +15,7 @@ class CarMakeController extends Controller
     public function index()
     {
         /** @var CarMake $data */
-        $data = CarMake::all();
+        $data = CarMake::query()->orderBy('name', 'asc')->get();
 
         return response()->json(['message' => 'success', 'data' => $data], 200);
     }
