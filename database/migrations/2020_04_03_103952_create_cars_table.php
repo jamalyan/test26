@@ -17,7 +17,7 @@ class CreateCarsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('make_id');
             $table->unsignedBigInteger('model_id');
-            $table->year('year');
+            $table->unsignedInteger('year');
             $table->unsignedDecimal('mileage');
             $table->string('color', 64);
             $table->unsignedDecimal('price');

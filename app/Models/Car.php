@@ -15,7 +15,7 @@ class Car extends Model
      */
     public function carMake()
     {
-        return $this->belongsTo(CarMake::class, 'make_id', 'id');
+        return $this->belongsTo(CarMake::class, 'make_id', 'id')->orderBy('name');
     }
 
     /**
@@ -23,6 +23,6 @@ class Car extends Model
      */
     public function carModel()
     {
-        return $this->belongsTo(CarModel::class, 'model_id', 'id');
+        return $this->belongsTo(CarModel::class, 'model_id', 'id')->orderBy('name');
     }
 }

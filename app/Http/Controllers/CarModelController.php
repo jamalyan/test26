@@ -34,7 +34,7 @@ class CarModelController extends Controller
      */
     public function create()
     {
-        $makes = CarMake::query()->pluck('name', 'id')->toArray();
+        $makes = CarMake::query()->orderBy('name')->pluck('name', 'id')->toArray();
         return view('model.create', compact('makes'));
     }
 
@@ -59,7 +59,7 @@ class CarModelController extends Controller
      */
     public function edit(CarModel $model)
     {
-        $makes = CarMake::query()->pluck('name', 'id')->toArray();
+        $makes = CarMake::query()->orderBy('name')->pluck('name', 'id')->toArray();
         return view('model.edit', compact('model', 'makes'));
     }
 

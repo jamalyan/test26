@@ -15,7 +15,7 @@ class CarMake extends Model
      */
     public function carModels()
     {
-        return $this->hasMany(CarModel::class, 'make_id', 'id');
+        return $this->hasMany(CarModel::class, 'make_id', 'id')->orderBy('name');
     }
 
     /**
