@@ -12,6 +12,7 @@ class CarModel extends Model
     use SoftDeletes;
 
     protected $fillable = ['name', 'make_id'];
+    protected $hidden = ['id', 'make_id', 'created_at', 'updated_at', 'deleted_at'];
 
     /**
      * @return BelongsTo

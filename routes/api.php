@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'cars'], function () {
+    Route::get('/makes', 'CarMakeController@index')->name('makes');
+    Route::get('/models', 'CarModelController@index')->name('models');
+    Route::get('/list', 'CarController@index')->name('cars');
 });
