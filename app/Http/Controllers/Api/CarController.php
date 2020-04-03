@@ -46,7 +46,7 @@ class CarController extends Controller
             ->when($request->get('price_to'), function (Builder $query, $price_to) {
                 return $query->where('price', '<', $price_to);
             })
-            ->orderBy('name', 'asc')
+            ->orderBy('created_at', 'desc')
             ->get();
 
         return response()->json(['message' => 'success', 'data' => $data], 200);
