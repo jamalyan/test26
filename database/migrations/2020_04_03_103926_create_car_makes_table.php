@@ -15,7 +15,7 @@ class CreateCarMakesTable extends Migration
     {
         Schema::create('car_makes', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 64);
+            $table->string('name', 64)->unique();
             $table->timestamps();
         });
     }
