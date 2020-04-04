@@ -85,6 +85,7 @@ class CarModelController extends Controller
     public function destroy(CarModel $model)
     {
         try {
+            $model->cars()->delete();
             $model->delete();
             return redirect()->route('models.index')->with('my_response', ['class' => 'success', 'message' => 'Model successfully deleted']);
         } catch (Exception $exception) {

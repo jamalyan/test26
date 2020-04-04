@@ -54,7 +54,7 @@
                         @foreach($models as $model)
                             <tr>
                                 <td>{{ $model->carMake->name }}</td>
-                                <td>{{ $model->carModel->name }}</td>
+                                <td>{{ $model->carModel ? $model->carModel->name : '' }}</td>
                                 <td>{{ $model->year }}</td>
                                 <td>{{ $model->mileage }}</td>
                                 <td>{{ $model->color }}</td>
