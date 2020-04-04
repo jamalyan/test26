@@ -2,9 +2,9 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Car Makes
+            Справочник марок
             <div class="float-right">
-                <a class="btn btn-sm btn-success" href="{{ route('makes.create') }}">Add Make</a>
+                <a class="btn btn-sm btn-success" href="{{ route('makes.create') }}">Добавить Марку</a>
             </div>
         </div>
         <div class="card-body">
@@ -18,16 +18,16 @@
                     <table class="table table-bordered table-sm">
                         <thead>
                         <tr class="bg-light">
-                            <th>Name</th>
-                            <th style="width: 20%">Created</th>
-                            <th style="width: 15%">Actions</th>
+                            <th>Имя</th>
+                            <th style="width: 20%">Дата создания</th>
+                            <th style="width: 20%">Действия</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr class="bg-light">
-                            <th>Name</th>
-                            <th>Created</th>
-                            <th>Actions</th>
+                            <th>Имя</th>
+                            <th>Дата создания</th>
+                            <th>Действия</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -36,11 +36,11 @@
                                 <td>{{ $model->name }}</td>
                                 <td>{{ $model->created_at ? $model->created_at->format('d M Y (H:i)') : '' }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-warning" href="{{ route('makes.edit', $model) }}">Edit</a>
+                                    <a class="btn btn-sm btn-warning" href="{{ route('makes.edit', $model) }}">Редактировать</a>
                                     <form class="d-inline" method="POST" action="{{ route('makes.destroy', $model) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
                                     </form>
                                 </td>
                             </tr>

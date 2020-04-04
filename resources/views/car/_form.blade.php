@@ -1,7 +1,7 @@
 @csrf
 
 <div class="form-group">
-    <label for="make_id" class="col-form-label text-md-right">Make</label>
+    <label for="make_id" class="col-form-label text-md-right">Марка</label>
 
     <select id="make_id" class="form-control @error('make_id') is-invalid @enderror" name="make_id">
         @foreach($makes as $make)
@@ -18,7 +18,7 @@
 </div>
 
 <div class="form-group">
-    <label for="model_id" class="col-form-label text-md-right">Model</label>
+    <label for="model_id" class="col-form-label text-md-right">Модель</label>
 
     <select id="model_id" class="form-control @error('model_id') is-invalid @enderror" name="model_id">
         @foreach($models as $model)
@@ -35,7 +35,7 @@
 </div>
 
 <div class="form-group">
-    <label for="year" class="col-form-label text-md-right">Year</label>
+    <label for="year" class="col-form-label text-md-right">Год выпуска</label>
 
     <select id="year" class="form-control @error('year') is-invalid @enderror" name="year">
         @for($i = date('Y'); $i >= 1885; $i--)
@@ -51,7 +51,7 @@
 </div>
 
 <div class="form-group">
-    <label for="mileage" class="col-form-label text-md-right">Mileage</label>
+    <label for="mileage" class="col-form-label text-md-right">Пробег</label>
 
     <input id="mileage" type="number" class="form-control @error('mileage') is-invalid @enderror" name="mileage"
            value="{{ old('mileage', isset($car) ? $car->mileage : '') }}" required min="0" max="1000000" step="0.01">
@@ -64,7 +64,7 @@
 </div>
 
 <div class="form-group">
-    <label for="color" class="col-form-label text-md-right">Color</label>
+    <label for="color" class="col-form-label text-md-right">Цвет</label>
 
     <select id="color" class="form-control @error('color') is-invalid @enderror" name="color">
         @foreach(getAllColorNames() as $color)
@@ -81,7 +81,7 @@
 </div>
 
 <div class="form-group">
-    <label for="price" class="col-form-label text-md-right">Price</label>
+    <label for="price" class="col-form-label text-md-right">Стоимость</label>
 
     <input id="price" type="number" class="form-control @error('price') is-invalid @enderror" name="price"
            value="{{ old('price', isset($car) ? $car->price : '') }}" required min="0" max="1000000" step="0.01">
@@ -94,7 +94,7 @@
 </div>
 
 
-<button type="submit" class="btn btn-primary float-right">{{ isset($car) ? 'Update' : 'Create' }}</button>
+<button type="submit" class="btn btn-primary float-right">{{ isset($car) ? 'Редактировать' : 'Добавить' }}</button>
 
 @push('footer-post-scripts')
     <script>

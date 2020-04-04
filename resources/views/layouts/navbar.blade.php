@@ -14,13 +14,13 @@
             <ul class="navbar-nav mr-auto">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('makes.index') }}">Car Makes</a>
+                        <a class="nav-link" href="{{ route('makes.index') }}">Справочник марок</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('models.index') }}">Car Models</a>
+                        <a class="nav-link" href="{{ route('models.index') }}">Справочник моделей</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('cars.index') }}">Cars</a>
+                        <a class="nav-link" href="{{ route('cars.index') }}">Автомобили</a>
                     </li>
                 @endauth
             </ul>

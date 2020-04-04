@@ -1,7 +1,7 @@
 @csrf
 
 <div class="form-group">
-    <label for="name" class="col-form-label text-md-right">Name</label>
+    <label for="name" class="col-form-label text-md-right">Имя</label>
 
     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
            value="{{ old('name', isset($model) ? $model->name : '') }}" required autocomplete="name" autofocus>
@@ -14,7 +14,7 @@
 </div>
 
 <div class="form-group">
-    <label for="make_id" class="col-form-label text-md-right">Make</label>
+    <label for="make_id" class="col-form-label text-md-right">Марка</label>
 
     <select id="make_id" class="form-control @error('make_id') is-invalid @enderror" name="make_id">
         @foreach($makes as $id => $makeName)
@@ -30,4 +30,4 @@
     @enderror
 </div>
 
-<button type="submit" class="btn btn-primary float-right">{{ isset($model) ? 'Update' : 'Create' }}</button>
+<button type="submit" class="btn btn-primary float-right">{{ isset($model) ? 'Редактировать' : 'Добавить' }}</button>
