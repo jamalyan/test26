@@ -7,8 +7,8 @@
                 <form method="GET" action="{{ route('cars.index') }}" style="display: inline-block">
                     <label>
                         <select id="make_id" class="form-control-sm" name="make" onchange="this.form.submit()">
+                            <option value="">All</option>
                             @foreach($makes as $make)
-                                <option value="">All</option>
                                 <option value="{{ $make->id }}" {{ isset($selectedMake) && $selectedMake == $make->id ? 'selected' : '' }}>{{ $make->name }}</option>
                             @endforeach
                         </select>
