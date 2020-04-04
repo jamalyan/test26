@@ -4,6 +4,16 @@
         <div class="card-header">
             Cars
             <div class="float-right">
+                <form method="GET" action="{{ route('cars.index') }}" style="display: inline-block">
+                    <label>
+                        <select id="make_id" class="form-control-sm" name="make" onchange="this.form.submit()">
+                            @foreach($makes as $make)
+                                <option
+                                    value="{{ $make->id }}" {{ isset($selectedMake) && $selectedMake == $make->id ? 'selected' : '' }}>{{ $make->name }}</option>
+                            @endforeach
+                        </select>
+                    </label>
+                </form>
                 <a class="btn btn-sm btn-success" href="{{ route('cars.create') }}">Add Car</a>
             </div>
         </div>

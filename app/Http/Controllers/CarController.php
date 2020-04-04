@@ -8,6 +8,7 @@ use App\Models\CarMake;
 use App\Models\CarModel;
 use Exception;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,16 +19,24 @@ class CarController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return Factory|View
      */
-    public function index()
+    public function index(Request $request)
     {
+        $makes = CarMake::query()->orderBy('name')->get();
+        $selectedMake = $request->get('make');
+
         /** @var Car $models */
         $models = Car::query()
             ->with('carMake', 'carModel')
+            ->when($selectedMake, function (Builder $query, $make_id) {
+                return $query->where('make_id', $make_id);
+            })
             ->orderBy('created_at', 'desc')
-            ->paginate(10);;
-        return view('car.index', compact('models'));
+            ->paginate(10);
+
+        return view('car.index', compact('models', 'makes', 'selectedMake'));
     }
 
     /**
