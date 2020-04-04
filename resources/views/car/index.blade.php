@@ -8,8 +8,8 @@
                     <label>
                         <select id="make_id" class="form-control-sm" name="make" onchange="this.form.submit()">
                             @foreach($makes as $make)
-                                <option
-                                    value="{{ $make->id }}" {{ isset($selectedMake) && $selectedMake == $make->id ? 'selected' : '' }}>{{ $make->name }}</option>
+                                <option value="">All</option>
+                                <option value="{{ $make->id }}" {{ isset($selectedMake) && $selectedMake == $make->id ? 'selected' : '' }}>{{ $make->name }}</option>
                             @endforeach
                         </select>
                     </label>
